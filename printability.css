@@ -1,0 +1,77 @@
+.jq-printabilityToolBar{
+	position: fixed;
+	display: inline-block;
+	left: 50%;
+	top: 4em;
+	padding: 5px;
+	background: #f0f0f0;
+	border: 1px solid #fff;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.75);
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+	border-radius: 5px;
+	z-index: 3;
+}
+
+.jq-printableElement{
+	color: red;
+	display: inline-block;
+}
+
+.jq-printabilityPrintBtn{
+		display: inline-block;
+		width: 26px;
+		height: 29px;
+		margin: 1px;
+		border: 1px solid transparent;
+		vertical-align: middle;
+		background: transparent url('printer_icon.png') center center no-repeat;
+	}
+
+	.jq-printability-active .jq-printabilityToolBar{ /*print mode*/
+		display: none;
+	}
+	
+	.jq-printabilityToolBar>.jq-printabilityApplyBtn{
+		display: inline-block;
+		width: 39px;
+		height: 29px;
+		padding: 5px;
+		vertical-align: middle;
+		background: transparent url('create_print_area_icon.png') center center no-repeat;
+		border: 1px solid transparent;
+		
+	}
+	
+	.jq-printabilityToolBar>.jq-printabilityApplyBtn:hover{
+		background-color: rgba(0,0,0,0.25);
+		border:1px solid gray;
+		border-radius: 3px;
+		box-shadow: inset 1px 1px 3px  rgba(0,0,0,0.25);
+	}
+	
+	.jq-printabilityArea{
+		position: absolute!important;
+		left: 0;
+		right: 0;
+		top: 0;
+		background: white!important;
+		z-index: 1024;
+		width: 100%!important;
+		min-height: 100%!important;
+		height:auto!important;
+		box-sizing: border-box;
+		overflow: auto;
+		margin: 0;
+		cursor: default!important;
+	}
+	
+	
+	.jq-printabilityArea .jq-printableElement{
+		display: none;
+	}
+	
+	.jq-printability-active{
+		display: block;
+		margin: 0;
+		padding: 0;
+	}

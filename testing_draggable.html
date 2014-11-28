@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#editor {
+			border: 2px solid red;
+			padding: 5px;
+			width: 500px;
+			min-height: 1000px;
+		}
+		.draggable {
+			display: inline-block;
+			padding: 3px;
+			background: yellow;
+			cursor: move !important;
+		}
+		
+		#latterOne{
+			display: inline-block;
+			background: red;
+			cursor:move;
+		}
+
+
+	.jq-printabilityPrintBtn{
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+		background-color: #f00;
+		vertical-align: middle;
+		text-indent: -99999px;
+	}
+	
+	#emptydiv{
+		height: 1em;
+		background: gray;
+	}
+
+
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src='commonHTMLTools.js'></script>
+	<script src='draggability.js'></script>
+	<script>
+		var o = {};
+		jQuery(document).ready(function($){
+			$('#editor').draggability({ draggables: $('[ data-c]') }, o);
+			
+			$('.draggable').click(function(){
+				o.addDraggable($(this).css('background', 'green'));
+				$(this).off('click');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="editor" contenteditable="true">
+	    <p>
+			<span data-c class="jq-printabilityPrintBtn"></span>sdfsdf<b data-c style="color: red;">[</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nibh velit, adipiscing eget ipsum ut, accumsan laoreet nisi. Mauris vel ante metus. Etiam pharetra nibh vitae feugiat ornare. Sed velit massa, suscipit at libero quis, posuere sodales purus. Nam ac mattis sem. Sed vitae nulla lorem. Etiam nec lorem tempus, sagittis elit ut, pretium nibh. Curabitur ac luctus lectus. Suspendisse
+			<div id='emptydiv'>
+			</div>
+			lobortis, sem nec mollis pellentesque, felis libero dapibus libero, eu pharetra nulla odio non turpis. Morbi et massa eu erat sagittis auctor. Aenean accumsan tortor sit amet pulvinar auctor. Donec tempus orci a tortor bibendum gravida. In at purus tortor. Aliquam ac orci et dui convallis feugiat.<b data-c style="color: red;">]</b>asldkfhsakdjf
+			</p>
+	</div>
+	<span class="draggable" draggable="true" contenteditable="false">Token 2</span>
+</body>
+</html>

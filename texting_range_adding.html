@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(function(){
+			var p = $('p');
+			var range = document.createRange();
+			var anchorNode = p[0].childNodes[0];
+			var focusNode = p[1].childNodes[0];
+			range.setStart(anchorNode,1);
+			range.setEnd(focusNode,10);
+			window.getSelection().addRange(range);
+		});
+	</script>
+</head>
+<body>
+	<p>
+		some text in here! Hello world of selectionizms =)
+	</p>
+	<p>
+		some text in here! Hello world of selectionizms =)
+	</p>
+</body>
+</html>
